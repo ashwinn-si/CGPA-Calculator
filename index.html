@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Header font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <!--common font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="add_grade_container">
+        <div>
+            <p>Subject No </p>
+            <p id="subject_counter"></p>
+            
+        </div>
+        <div>
+            <p>Credit Points</p>
+            <div id="credit_point">
+                <select>
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+            </div>
+        </div>
+            <div>
+            <p>Grade Points</p>
+            <div id="grade_point">
+                <select>
+                    <option selected value="1">O</option>
+                    <option value="2">A+</option>
+                    <option value="3">A</option>
+                    <option value="4">B+</option>
+                    <option value="5">B</option>
+                    <option value="6">C</option>
+                </select>
+            </div>
+        </div>
+        <button id="add_subject_button">Add Subject</button>
+    </div>
+    
+    <div class="container">
+            <button id="add_grade_trigger">ADD GRADE</button>
+    </div>
+    <script src="index.js"></script>
+    
+</body>
+</html>
