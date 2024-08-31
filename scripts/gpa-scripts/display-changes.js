@@ -28,12 +28,12 @@ function grade_getter(value){
 }
 document.getElementById('add_subject_button').addEventListener('click',()=>{
     //storing the marks value
-    mark_storage.push({subject_no:subject_count,credit_point:credit_point,grade_point:grade_point});
+    curr_sem_mark_storage.push({subject_no:subject_count,credit_point:credit_point,grade_point:grade_point});
 
     //changing the inner html
     document.querySelector('.subject_no').innerHTML+=`<p id="sub-no-${subject_count}" class="context">${subject_count}</p>`;
-    document.querySelector('.credit_point').innerHTML+=`<p id="sub-credit-${subject_count}" class="context">${mark_storage[subject_count-1].credit_point}</p>`;
-    document.querySelector('.grade_point').innerHTML+=`<p id="sub-grade-${subject_count}" class="context">${grade_getter(mark_storage[subject_count-1].grade_point)}</p>`;
+    document.querySelector('.credit_point').innerHTML+=`<p id="sub-credit-${subject_count}" class="context">${curr_sem_mark_storage[subject_count-1].credit_point}</p>`;
+    document.querySelector('.grade_point').innerHTML+=`<p id="sub-grade-${subject_count}" class="context">${grade_getter(curr_sem_mark_storage[subject_count-1].grade_point)}</p>`;
 
     //changes he display settings
     document.querySelector(".add_grade_container").style.visibility='hidden';

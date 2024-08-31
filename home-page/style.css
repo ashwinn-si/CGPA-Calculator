@@ -1,0 +1,86 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    font-family: "Oswald";
+    font-weight: bold;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgray;
+    flex-direction: column;
+}
+.pop_up_container{
+    background-color: rgba(255, 255, 255, 0.84);
+    position: absolute;
+    width: 450px;
+    padding: 20px 0;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Oswald";
+    text-transform: uppercase;
+    flex-wrap: wrap;
+    z-index: 999;
+    font-size: 1.2rem;
+    visibility: hidden;
+}
+.pop_up_container input{
+    margin: 10px;
+    font-size: 1rem;
+    text-align: center;
+    padding :5px;
+}
+.pop_up_container div button{
+    padding: 10px 15px;
+    background-color: tomato;
+    border-radius: 20px;
+    font-size: 1rem;
+    border: none;
+    font-weight: bold;
+    margin: 10px 10px;
+    text-transform: uppercase;
+}
+.container{
+    background-color: tomato;
+    border-radius: 20px;
+    padding: 10px;
+    width: 450px;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin: 5px 0px;
+}
+.container div div{
+    width: 50%;
+    font-size: 1.2rem;
+}
+.each_semcontainer{
+    color: lightblue;
+    background-color: blueviolet;
+    border-radius: 50px;
+    padding: 5px;
+}
+.header{
+    font-size: 1.5rem;
+    
+    color: white;
+}
+#add_sem_gpa_button{
+    padding: 5px 10px;
+    font-size: 1.2rem;
+}
