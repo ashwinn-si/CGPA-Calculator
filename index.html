@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <p class="header">GPA CALCULATOR</p>
     <div class="add_grade_container">
         <div>
             <p>Subject No </p>
@@ -36,22 +37,41 @@
             <p>Grade Points</p>
             <div id="grade_point">
                 <select>
-                    <option selected value="1">O</option>
-                    <option value="2">A+</option>
-                    <option value="3">A</option>
-                    <option value="4">B+</option>
-                    <option value="5">B</option>
-                    <option value="6">C</option>
+                    <option selected value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
                 </select>
             </div>
         </div>
         <button id="add_subject_button">Add Subject</button>
     </div>
+    <div class="gpa_shower_container">
+        <p>gpa : <span id="gpa_text">9.14</span> / 10</p>
+        <div>
+            <button id="edit_button">return</button>
+            <button id="return_home">home</button>
+        </div>
+    </div>
     
     <div class="container">
+            <div class="subject_no">
+                <p class="sub_header">subject<br>NO</p>
+            </div>
+            <div class="credit_point">
+                <p class="sub_header">credit<br>point</p>
+            </div>
+            <div class="grade_point">
+                <p class="sub_header">grade<br>point</p>
+            </div>
             <button id="add_grade_trigger">ADD GRADE</button>
+            <button id="calculate_gpa">Calculate GPA</button>
     </div>
+    <script src="data.js"></script>
     <script src="index.js"></script>
-    
+    <script src="display-changes.js"></script>
 </body>
 </html>

@@ -1,6 +1,5 @@
 let subject_count=1;
-let mark_storage=[];
-let grade_point=1;
+let grade_point=10;
 let credit_point=1;
 
 //add-grade extension js-code
@@ -17,14 +16,33 @@ credit_point_button.addEventListener("change",()=>{
 });
 
 document.getElementById('add_subject_button').addEventListener("click",()=>{
-    mark_storage.push({subject_no:subject_count,credit_point:credit_point,grade_point:grade_point});
-    subject_count++;
-    document.querySelector(".add_grade_container").style.visibility='hidden';
+    
 });
-
 
 //add-grade extension trigger js code
 document.getElementById("add_grade_trigger").addEventListener("click",()=>{
     document.getElementById("subject_counter").innerHTML=subject_count;
     document.querySelector(".add_grade_container").style.visibility='visible';
 });
+
+
+//adding event listeners for the gpa_show_container buttons
+
+document.getElementById("edit_button").addEventListener('click',()=>{
+    document.querySelector(".gpa_shower_container").style.visibility='hidden';
+})
+document.getElementById("return_home").addEventListener('click',()=>{
+    alert("hello");
+})
+//main function that calculates the gpa
+document.getElementById("calculate_gpa").addEventListener("click",()=>{
+    let total_grade_point=0
+    let total_credit_point=0
+    mark_storage.forEach((Element)=>{
+        console.log(Element);
+        total_credit_point+=parseInt(Element.credit_point)*10;
+        total_grade_point+=parseInt(Element.credit_point)*parseInt(Element.grade_point);
+    })
+    const gpa=((total_grade_point/total_credit_point)*10).toFixed(2);
+    document.getElementById("gpa_text").innerHTML=gpa;    document.querySelector(".gpa_shower_container").style.visibility='visible';
+})
