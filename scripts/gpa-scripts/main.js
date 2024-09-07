@@ -3,6 +3,13 @@ let grade_point=10;
 let credit_point=1;
 let curr_sem_mark_storage=[];
 let gpa;
+
+let curr_sem_counts=JSON.parse(localStorage.getItem("curr_sem_count"));
+let mark_storages=JSON.parse(localStorage.getItem("mark_storage")) || []; // containes all the semesters marks 
+let cpg_storages=JSON.parse(localStorage.getItem("cpg_storage")) || []; //containes all the cgp of the semesters
+//contains the entire marks of each sem
+
+
 //add-grade extension js-code
 //adding event listeners for the grade points and credit points
 
@@ -12,7 +19,7 @@ grade_point_button.addEventListener("change",()=>{
 });
 
 let credit_point_button=document.getElementById("credit_point").querySelector('select');
-credit_point_button.addEventListener("change",()=>{
+    credit_point_button.addEventListener("change",()=>{
     credit_point=credit_point_button.value;
 });
 
@@ -33,10 +40,13 @@ document.getElementById("edit_button").addEventListener('click',()=>{
     document.querySelector(".gpa_shower_container").style.visibility='hidden';
 })
 document.getElementById("return_home").addEventListener('click',()=>{
-    mark_storage.push(curr_sem_mark_storage);
-    cpg_storage.push(gpa);
-    console.log(mark_storage);
-    console.log(cpg_storage);
+    mark_storages.push({curr_sem_counts:curr_sem_mark_storage});
+    cpg_storages.push({curr_sem_counts:curr_sem_counts,gpa:gpa});
+    curr_sem_counts++;
+    localStorage.setItem("curr_sem_count",JSON.stringify(curr_sem_counts));
+    localStorage.setItem("mark_storage",JSON.stringify(mark_storages));
+    localStorage.setItem("cpg_storage",JSON.stringify(cpg_storages));
+    window.location.href="home-page/index.html";
 })
 
 //main function that calculates the gpa

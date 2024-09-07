@@ -48,39 +48,59 @@ body{
     text-transform: uppercase;
 }
 .container{
-    background-color: tomato;
-    border-radius: 20px;
-    padding: 10px;
-    width: 450px;
-    display: flex;
-    justify-self: center;
-    align-items: center;
-    flex-direction: column;
-}
-.container div{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    width: 100%;
-    margin: 5px 0px;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 10px;
+    width: 450px;  
+    background-color: tomato;
 }
-.container div div{
+.sub_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.sub_header div{
     width: 50%;
+}
+.sub_header div p{
+    text-align: center;
     font-size: 1.2rem;
 }
-.each_semcontainer{
-    color: lightblue;
-    background-color: blueviolet;
-    border-radius: 50px;
-    padding: 5px;
+.container_1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.container_1 div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.container_1 div div{
+    width: 50%;
+}
+.container_1 div div p{
+    text-align: center;
 }
 .header{
     font-size: 1.5rem;
-    
     color: white;
 }
-#add_sem_gpa_button{
-    padding: 5px 10px;
+.button_container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+#add_sem_gpa_button,#cal_cpga_button{
+    margin-top: 5px;
+    padding: 5px 20px;
     font-size: 1.2rem;
 }

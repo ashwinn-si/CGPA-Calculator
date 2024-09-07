@@ -12,7 +12,7 @@
 <body>
     <div class="pop_up_container">
         <p>Enter your gpa</p>
-        <input type="number">
+        <input type="number" id="cpg_scored">
         <div>
             <button id="submit_button">Submit</button>
             <button id="dont_know_button">DON'T KNOW</button>
@@ -20,15 +20,17 @@
     </div>
     <div class="container">
         <p class="header">CGPA CALCULATOR</p>
-        <div>
+        <div class="sub_header">
             <div><p>SEM</p></div>
             <div><p>gpa</p></div>
         </div>
-        <div id="sem-1" class="each_semcontainer">
-            <div><p>SEM 1</p></div>
-            <div><p>9.76</p></div>
+        <div class="container_1">
         </div>
-        <button id="add_sem_gpa_button">ADD GPA</button>
+        <div class="button_container">
+            <button id="add_sem_gpa_button">ADD GPA</button>
+            <button id="cal_cpga_button">CAL - GPA</button>
+        </div>
+        
     </div>
     <script src="../scripts/data.js"></script>
     <script src="../scripts/cpga-scripts/main.js"></script>
