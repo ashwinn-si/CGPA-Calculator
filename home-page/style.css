@@ -68,7 +68,7 @@ body{
 }
 .sub_header div p{
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 .container_1{
     display: flex;
@@ -88,6 +88,7 @@ body{
 }
 .container_1 div div p{
     text-align: center;
+    font-size: 1.2rem;
 }
 .header{
     font-size: 1.5rem;
@@ -98,6 +99,13 @@ body{
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
+}
+#cpga-displayer{
+    font-size: 1.2rem;
+    background-color: aliceblue;
+    padding: 5px 10px;
+    border-radius: 10px;
+
 }
 #add_sem_gpa_button,#cal_cpga_button{
     margin-top: 5px;

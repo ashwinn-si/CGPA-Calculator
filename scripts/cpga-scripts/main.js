@@ -25,12 +25,10 @@ document.getElementById("dont_know_button").addEventListener('click',()=>{
 
 let container=document.querySelector(".container_1");
 function display_changes(){
-    console.log(curr_sem_counts);
+    
     if(cpg_storages.length!=0){
-        console.log(cpg_storages);
         let inner_text='';
         cpg_storages.forEach((Element)=>{
-            console.log(Element);
             inner_text+=`<div id="sem-${Element.curr_sem_counts}"       class="each_semcontainer">
                     <div><p>SEM ${Element.curr_sem_counts}</p></div>
                     <div><p>${Element.gpa}</p></div>
@@ -40,4 +38,14 @@ function display_changes(){
     }
 }
 
+
+//TODO - CGPA CALUCTION
+document.getElementById("cal_cpga_button").addEventListener('click',()=>{
+    let total_gpa=0;
+    cpg_storages.forEach((Element)=>{
+        total_gpa+=parseFloat(Element.gpa);
+    })
+    document.getElementById("cpga-displayer").innerHTML = ((total_gpa / ((curr_sem_counts - 1) * 10))*10).toFixed(2);
+
+})
 display_changes(); //rendering the page one time 
