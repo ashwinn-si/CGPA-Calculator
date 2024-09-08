@@ -45,7 +45,7 @@ document.getElementById("cal_cpga_button").addEventListener('click',()=>{
     cpg_storages.forEach((Element)=>{
         total_gpa+=parseFloat(Element.gpa);
     })
-    document.getElementById("cpga-displayer").innerHTML = ((total_gpa / ((curr_sem_counts - 1) * 10))*10).toFixed(2);
+    document.getElementById("cpga-displayer").innerHTML = ((total_gpa / ((curr_sem_counts - 1) * 10))*10).toFixed(3);
 
 })
 display_changes(); //rendering the page one time 
