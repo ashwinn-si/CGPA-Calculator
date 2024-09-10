@@ -3,6 +3,7 @@ let grade_point=10;
 let credit_point=1;
 let curr_sem_mark_storage=[];
 let gpa;
+//TODO CAHNGE THE SUBJECT COUNT INTO SUBJECT NAME AND PUSH THE SUBJECT NAME INTO CURR_SEM_MARK_STORGAE 
 
 let curr_sem_counts=JSON.parse(localStorage.getItem("curr_sem_count"));
 let mark_storages=JSON.parse(localStorage.getItem("mark_storage")) || []; // containes all the semesters marks 

@@ -39,7 +39,6 @@ function display_changes(){
 }
 
 
-//TODO - CGPA CALUCTION
 document.getElementById("cal_cpga_button").addEventListener('click',()=>{
     let total_gpa=0;
     cpg_storages.forEach((Element)=>{
@@ -48,4 +47,4 @@ document.getElementById("cal_cpga_button").addEventListener('click',()=>{
     document.getElementById("cpga-displayer").innerHTML = ((total_gpa / ((curr_sem_counts - 1) * 10))*10).toFixed(3);
 
 })
-display_changes(); //rendering the page one time 
+display_changes(); //!rendering the page one time 
