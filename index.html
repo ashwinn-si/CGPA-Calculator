@@ -12,7 +12,7 @@
 <body>
     <div class="pop_up_container">
         <p>Enter your gpa</p>
-        <input type="number" id="cpg_scored">
+        <input type="number" id="cpg_scored" min="0" max="10">
         <div>
             <button id="submit_button">Submit</button>
             <button id="dont_know_button">DON'T KNOW</button>
@@ -32,7 +32,7 @@
         </div>
         <div>
             <div><p>NEW GPA</p></div>
-            <div><input id="modify_new_gpa" type="number"></div></div>
+            <div><input id="modify_new_gpa" type="number" min="0" max="10"></div></div>
         <button id="modify_button">MODIFY</button>
     </div>
     <div class="edit_sem_container">
@@ -45,6 +45,10 @@
             </div>
         </div>
         <button id="remove_sem_button">REMOVE SEM</button>
+    </div>
+    <div id="marksChart">
+        <canvas id="myChart"></canvas>
+        <button id="chart_return_button">Return</button>
     </div>
     <div class="container">
         <p class="header">CGPA CALCULATOR</p>
@@ -60,12 +64,17 @@
             <button id="cal_cpga_button">CAL - GPA</button>
             <button id="main_edit_button">EDIT</button>
         </div>
+        <div class="button_container predict_container">
+            <button id="analyse_button">ANALYSE</button>
+        </div>
         
     </div>
     
-    <script src="scripts/data.js"></script>
+    <script src="scripts/data.js"></script> 
     <script src="scripts/cpga-scripts/main.js"></script>
     <script src="scripts/cpga-scripts/remove_button.js"></script>
     <script src="scripts/cpga-scripts/modify_button.js"></script>
+    <!--GRAPH SCRIPT-->
+    <script src="scripts/cpga-scripts/analyse_script.js"></script>
 </body>
 </html>

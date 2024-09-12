@@ -24,6 +24,7 @@ document.getElementById("dont_know_button").addEventListener('click',()=>{
 })
 
 let container=document.querySelector(".container_1");
+
 function main_display_changer(){
 
     if(cpg_storages.length!=0){
@@ -35,8 +36,10 @@ function main_display_changer(){
                 </div>`
         })
         container.innerHTML=inner_text;
+        document.querySelector('.predict_container').style.visibility='visible';
     }else{
         container.innerHTML="";
+        document.querySelector('.predict_container').style.visibility='hidden';
     }
 
 }
