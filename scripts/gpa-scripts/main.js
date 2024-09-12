@@ -1,9 +1,10 @@
 let subject_count=1;
 let grade_point=10;
 let credit_point=1;
+let subject_name="";
 let curr_sem_mark_storage=[];
 let gpa;
-//TODO CAHNGE THE SUBJECT COUNT INTO SUBJECT NAME AND PUSH THE SUBJECT NAME INTO CURR_SEM_MARK_STORGAE 
+
 
 let curr_sem_counts=JSON.parse(localStorage.getItem("curr_sem_count"));
 let mark_storages=JSON.parse(localStorage.getItem("mark_storage")) || []; // containes all the semesters marks 
@@ -24,13 +25,8 @@ let credit_point_button=document.getElementById("credit_point").querySelector('s
     credit_point=credit_point_button.value;
 });
 
-document.getElementById('add_subject_button').addEventListener("click",()=>{
-    
-});
-
 //add-grade extension trigger js code
 document.getElementById("add_grade_trigger").addEventListener("click",()=>{
-    document.getElementById("subject_counter").innerHTML=subject_count;
     document.querySelector(".add_grade_container").style.visibility='visible';
 });
 
@@ -50,7 +46,7 @@ document.getElementById("return_home").addEventListener('click',()=>{
     window.location.href="home-page/index.html";
 })
 
-//main function that calculates the gpa
+//!main function that calculates the gpa
 document.getElementById("calculate_gpa").addEventListener("click",()=>{
     let total_grade_point=0
     let total_credit_point=0
@@ -60,4 +56,17 @@ document.getElementById("calculate_gpa").addEventListener("click",()=>{
     })
     gpa=((total_grade_point/total_credit_point)*10).toFixed(2);
     document.getElementById("gpa_text").innerHTML=gpa;    document.querySelector(".gpa_shower_container").style.visibility='visible';
+    
+})
+
+//!edit button
+document.getElementById("edit").addEventListener("click",()=>{
+    let edit_container=document.querySelector(".edit_subject_container");
+    edit_container.style.visibility='visible';
+    selection_box_changes();
+})
+document.getElementById("remove_subject_button").addEventListener("click",()=>{
+    let edit_container=document.querySelector(".edit_subject_container");
+    edit_container.style.visibility='hidden';
+    deleting_subject();
 })

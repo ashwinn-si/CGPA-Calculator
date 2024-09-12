@@ -18,8 +18,8 @@
     <p class="header">GPA CALCULATOR</p>
     <div class="add_grade_container">
         <div>
-            <p>Subject No </p>
-            <p id="subject_counter"></p>
+            <p>Subject Name</p>
+            <input type="text" class="text_box" id="subject_name"> 
             
         </div>
         <div>
@@ -49,7 +49,18 @@
         </div>
         <button id="add_subject_button">Add Subject</button>
     </div>
-    <!--*TODO CHANGE THE SUBJECT COUNT INTO SUB NAME-->
+    <div class="edit_subject_container">
+        <p>ENTER THE SUBJECT NO. TO BE DELETED</p>
+        <div>
+            <div id="subject_del_no">
+                <select id="selection_container">
+                    
+                </select>
+            </div>
+        </div>
+        <button id="remove_subject_button">REMOVE SUBJECT</button>
+    </div>
+    
     <div class="gpa_shower_container">
         <p>gpa : <span id="gpa_text">9.14</span> / 10</p>
         <div>
@@ -60,7 +71,7 @@
     
     <div class="container">
             <div class="subject_no">
-                <p class="sub_header">subject<br>NO</p>
+                <p class="sub_header">subject<br>Name</p>
             </div>
             <div class="credit_point">
                 <p class="sub_header">credit<br>point</p>
@@ -70,6 +81,7 @@
             </div>
             <button id="add_grade_trigger">ADD GRADE</button>
             <button id="calculate_gpa">Calculate GPA</button>
+            <button id="edit">EDIT</button>
     </div>
     <script src="scripts/data.js"></script>
     <script src="scripts/gpa-scripts/main.js"></script>

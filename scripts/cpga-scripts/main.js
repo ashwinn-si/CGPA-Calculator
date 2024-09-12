@@ -1,4 +1,4 @@
-let mark_storages=JSON.parse(localStorage.getItem("mark_storage")) || []; // containes all the semesters marks 
+let mark_storages=JSON.parse(localStorage.getItem("mark_storage")) || []; // containes all sem marks with subject
 let cpg_storages=JSON.parse(localStorage.getItem("cpg_storage")) || []; //containes all the cgp of the semesters
 //contains the entire marks of each sem
 let curr_sem_counts=JSON.parse(localStorage.getItem("curr_sem_count"))||1;
