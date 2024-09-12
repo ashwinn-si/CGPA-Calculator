@@ -81,6 +81,8 @@ function deleting_subject() {
            element.subject_no-=1;
         }
     });
-    subject_count--;
+    if(subject_count !=1){
+        subject_count--;
+    }
     main_container_display_changer()
 }

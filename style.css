@@ -2,24 +2,19 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    text-transform: uppercase;
+    font-family: "Oswald";
+    font-weight: bold;
 }
 body{
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     background-color: darkgray;
     flex-direction: column;
 }
-.header{
-    font-size: 1.5rem;
-    font-family: "Oswald";
-    font-weight: bold;
-    padding: 10px;
-}
-
-/*!add grade container styling*/
-.add_grade_container,.gpa_shower_container,.edit_subject_container{
+.pop_up_container{
     background-color: rgba(255, 255, 255, 0.84);
     position: absolute;
     width: 450px;
@@ -28,131 +23,92 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     font-family: "Oswald";
     text-transform: uppercase;
     flex-wrap: wrap;
     z-index: 999;
+    font-size: 1.2rem;
     visibility: hidden;
 }
-.gpa_shower_container{
-    font-size: 2rem;
-    flex-direction: column;   
+.pop_up_container input{
+    margin: 10px;
+    font-size: 1rem;
+    text-align: center;
+    padding :5px;
 }
-.gpa_shower_container div button{
-    padding: 10px 20px;
+.pop_up_container div button{
+    padding: 10px 15px;
     background-color: tomato;
     border-radius: 20px;
     font-size: 1rem;
-    font-family: "Oswald";
     border: none;
     font-weight: bold;
-    margin: 0px 10px;
+    margin: 10px 10px;
     text-transform: uppercase;
 }
-#gpa_text{
-    color: rgb(255, 0, 0);
-}
-.add_grade_container div{
+.container{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    width: 450px;  
+    background-color: tomato;
 }
-.add_grade_container div p{
-    font-size: 1rem;
-    margin: 15px;
-    font-weight: bold;
+.sub_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
-#credit_point select,#grade_point select{
-    font-size: 1rem;
-    padding: 2px 8px;
-    margin:10px;
+.sub_header div{
+    width: 50%;
 }
-#add_subject_button,#remove_subject_button{
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-/*!editing subject button styling*/
-.edit_subject_container{
-    flex-direction: column;
-}
-.edit_subject_container p{
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-.edit_subject_container select{
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 1.3rem;
+.sub_header div p{
     text-align: center;
-    width: 50px;
+    font-size: 1.4rem;
 }
-#remove_subject_button{
-    margin-top: 10px;
+.container_1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
 }
-/*!main contanier styling*/
-#subject_counter{
-    margin-top: 20px;
+.container_1 div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
-.text_box{
-    
-    width: 100px;
-    height: 30px;
+.container_1 div div{
+    width: 50%;
+}
+.container_1 div div p{
     text-align: center;
     font-size: 1.2rem;
 }
+.header{
+    font-size: 1.5rem;
+    color: white;
+}
+.button_container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+#cpga-displayer{
+    font-size: 1.2rem;
+    background-color: aliceblue;
+    padding: 5px 10px;
+    border-radius: 10px;
 
-.container{
-    width:480px;
-    background-color: tomato ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    background:url(assets/download\ \(1\).gif);
-    backdrop-filter: blur(10px);
-    text-transform: uppercase;
-    padding: 20px;
-    border-radius: 20px;
 }
-.container div{
-    width: 33.33%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    font-family: "Oswald";
-    font-weight: bold;
-}
-.sub_header{
-    font-size: 1.5rem;
-    color: white;
-}
-.context{
-    font-size: 1.5rem;
-    color: white;
-    margin: 10px 0;
-}
-#add_grade_trigger,#calculate_gpa,#edit{
-    padding: 10px 20px;
-    background-color: tomato;
-    border-radius: 20px;
-    font-size: 1rem;
-    font-family: "Oswald";
-    border: none;
-    font-weight: bold;
-    margin: 0px 10px;
-}
-#calculate_gpa{
-    background-color: lightblue;
-}
-#edit{
-    background-color: lightgreen;
-    padding: 10px 40px;
+#add_sem_gpa_button,#cal_cpga_button{
+    margin-top: 5px;
+    padding: 5px 20px;
+    font-size: 1.2rem;
 }
