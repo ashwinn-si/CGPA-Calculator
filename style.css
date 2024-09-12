@@ -47,6 +47,78 @@ body{
     margin: 10px 10px;
     text-transform: uppercase;
 }
+/*!edit options container*/
+.edit_sem_container,.edit_options_container,.modify_container{
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.84);
+    position: absolute;
+    width: 450px;
+    padding: 20px 0;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Oswald";
+    text-transform: uppercase;
+    flex-wrap: wrap;
+    z-index: 999;
+    visibility: hidden;
+}
+.edit_options_container p{
+    font-size: 1.5rem;
+}
+.edit_options_container button{
+    margin-top: 10px;
+    width: 200px;
+    padding: 8px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/*!modify sem container*/
+.modify_header{
+    margin-bottom: 20px;
+}
+.modify_container p{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+select,input{
+    width: 130px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+.modify_container div{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 5px;
+}
+.modify_container div div{
+    width: 50%;
+}
+#modify_button,#remove_sem_button{
+    margin-top: 10px;
+    padding: 8px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/*!editing sem button styling*/
+
+.edit_sem_container p{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.edit_sem_container select{
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-align: center;
+    width: 50px;
+}
+
 .container{
     display: flex;
     justify-content: center;
@@ -105,9 +177,9 @@ body{
     background-color: aliceblue;
     padding: 5px 10px;
     border-radius: 10px;
-
+    visibility: hidden;
 }
-#add_sem_gpa_button,#cal_cpga_button{
+#add_sem_gpa_button,#cal_cpga_button,#main_edit_button{
     margin-top: 5px;
     padding: 5px 20px;
     font-size: 1.2rem;

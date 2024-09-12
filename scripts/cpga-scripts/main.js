@@ -12,7 +12,7 @@ document.getElementById("submit_button").addEventListener('click',()=>{
     cpg_storages.push({curr_sem_counts:curr_sem_counts,gpa:document.getElementById("cpg_scored").value});
     mark_storages.push({curr_sem_counts:null});
     curr_sem_counts++;
-    display_changes();
+    main_display_changer();
 });
 
 document.getElementById("dont_know_button").addEventListener('click',()=>{
@@ -20,12 +20,12 @@ document.getElementById("dont_know_button").addEventListener('click',()=>{
     localStorage.setItem("curr_sem_count",JSON.stringify(curr_sem_counts));
     localStorage.setItem("mark_storage",JSON.stringify(mark_storages));
     localStorage.setItem("cpg_storage",JSON.stringify(cpg_storages));
-    window.location.href="../index.html";
+    window.location.href="gpa-page/index.html";
 })
 
 let container=document.querySelector(".container_1");
-function display_changes(){
-    
+function main_display_changer(){
+
     if(cpg_storages.length!=0){
         let inner_text='';
         cpg_storages.forEach((Element)=>{
@@ -35,7 +35,10 @@ function display_changes(){
                 </div>`
         })
         container.innerHTML=inner_text;
+    }else{
+        container.innerHTML="";
     }
+
 }
 
 
@@ -45,6 +48,14 @@ document.getElementById("cal_cpga_button").addEventListener('click',()=>{
         total_gpa+=parseFloat(Element.gpa);
     })
     document.getElementById("cpga-displayer").innerHTML = ((total_gpa / ((curr_sem_counts - 1) * 10))*10).toFixed(3);
-
+    document.getElementById("cpga-displayer").style.visibility='visible';
 })
-display_changes(); //!rendering the page one time 
+
+//edit main container
+document.getElementById("main_edit_button").addEventListener('click',()=>{
+    document.querySelector(".edit_options_container").style.visibility='visible';
+})
+document.getElementById("return_button").addEventListener('click',()=>{
+    document.querySelector(".edit_options_container").style.visibility='hidden';
+})
+main_display_changer(); //!rendering the page one time 

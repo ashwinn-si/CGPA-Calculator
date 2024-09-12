@@ -115,7 +115,7 @@ body{
     align-items: center;
     flex-wrap: wrap;
     flex-direction: row;
-    background:url(assets/download\ \(1\).gif);
+    background:url(/assets/download\ \(1\).gif);
     backdrop-filter: blur(10px);
     text-transform: uppercase;
     padding: 20px;

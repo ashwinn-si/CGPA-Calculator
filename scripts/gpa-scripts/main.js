@@ -43,7 +43,7 @@ document.getElementById("return_home").addEventListener('click',()=>{
     localStorage.setItem("curr_sem_count",JSON.stringify(curr_sem_counts));
     localStorage.setItem("mark_storage",JSON.stringify(mark_storages));
     localStorage.setItem("cpg_storage",JSON.stringify(cpg_storages));
-    window.location.href="home-page/index.html";
+    window.location.href="../index.html";
 })
 
 //!main function that calculates the gpa
