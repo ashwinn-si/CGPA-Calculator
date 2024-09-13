@@ -129,6 +129,20 @@ select,input{
     width: 450px;  
     background-color: tomato;
 }
+.head_container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+#reset_button{
+    padding: 1px 5px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    position: absolute;
+    left: 80%;
+}
 .sub_header{
     display: flex;
     justify-content: center;
@@ -163,7 +177,7 @@ select,input{
     font-size: 1.2rem;
 }
 .header{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: white;
 }
 .button_container{

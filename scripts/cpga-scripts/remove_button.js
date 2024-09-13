@@ -32,6 +32,5 @@ document.getElementById("remove_sem_button").addEventListener('click',()=>{
         }
     })
     main_display_changer();
-    console.log(cpg_storages);
     delete_edit_container.style.visibility='hidden';
 })

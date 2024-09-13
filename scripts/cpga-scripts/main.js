@@ -1,18 +1,43 @@
 let mark_storages=JSON.parse(localStorage.getItem("mark_storage")) || []; // containes all sem marks with subject
 let cpg_storages=JSON.parse(localStorage.getItem("cpg_storage")) || []; //containes all the cgp of the semesters
 //contains the entire marks of each sem
+let alert_message=JSON.parse(localStorage.getItem("alert")) || true;
 let curr_sem_counts=JSON.parse(localStorage.getItem("curr_sem_count"))||1;
+
+//reset button text
+
+alert("Press the reset button before using the calculator. After completing your calculations, press reset again to clear all data and prepare the calculator for the next use.")
+
+document.getElementById("reset_button").addEventListener('click',()=>{
+    mark_storages=[];
+    cpg_storages=[];
+    curr_sem_counts=1;
+    main_display_changer();
+})
+
+//input_checker
+function error_catcher(score){
+    if(score>=0 && score<=10){
+        return true
+    }else{
+        alert("Enter a valid gpa[0-10]");
+        return false;
+    }
+}
 
 document.getElementById("add_sem_gpa_button").addEventListener('click',()=>{
     document.querySelector(".pop_up_container").style.visibility='visible';
 });
 
 document.getElementById("submit_button").addEventListener('click',()=>{
-    document.querySelector(".pop_up_container").style.visibility='hidden';
-    cpg_storages.push({curr_sem_counts:curr_sem_counts,gpa:document.getElementById("cpg_scored").value});
-    mark_storages.push({curr_sem_counts:null});
-    curr_sem_counts++;
-    main_display_changer();
+    if(error_catcher(parseFloat(document.getElementById("cpg_scored").value))){
+        cpg_storages.push({curr_sem_counts:curr_sem_counts,gpa:document.getElementById("cpg_scored").value});
+        mark_storages.push({curr_sem_counts:null});
+        curr_sem_counts++;
+        main_display_changer();
+        document.querySelector(".pop_up_container").style.visibility='hidden';
+    }
+    
 });
 
 document.getElementById("dont_know_button").addEventListener('click',()=>{
@@ -26,7 +51,6 @@ document.getElementById("dont_know_button").addEventListener('click',()=>{
 let container=document.querySelector(".container_1");
 
 function main_display_changer(){
-
     if(cpg_storages.length!=0){
         let inner_text='';
         cpg_storages.forEach((Element)=>{

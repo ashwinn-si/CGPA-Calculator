@@ -7,6 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    
+    <!--CHART REQUIED JS-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,7 +23,7 @@
         </div>
     </div>
     <div class="edit_options_container">
-        <p>AVALABLE OPTIONS</p>
+        <p>AVAILABLE OPTIONS</p>
         <button id="modify_sem_button">MODIFY GPA SEM</button>
         <button id="edit_button">REMOVE GPA SEM</button>
         <button id="return_button">RETURN</button>
@@ -32,16 +36,15 @@
         </div>
         <div>
             <div><p>NEW GPA</p></div>
-            <div><input id="modify_new_gpa" type="number" min="0" max="10"></div></div>
+            <div><input id="modify_new_gpa" type="number" min="0" max="10"></div>
+        </div>
         <button id="modify_button">MODIFY</button>
     </div>
     <div class="edit_sem_container">
         <p>ENTER THE SEM NO. TO BE DELETED</p>
         <div>
             <div id="subject_del_no">
-                <select id="delete_selection_container">
-                    
-                </select>
+                <select id="delete_selection_container"></select>
             </div>
         </div>
         <button id="remove_sem_button">REMOVE SEM</button>
@@ -51,13 +54,16 @@
         <button id="chart_return_button">Return</button>
     </div>
     <div class="container">
-        <p class="header">CGPA CALCULATOR</p>
+        <div class="head_container">
+            <p class="header">CGPA CALCULATOR</p>
+            <button id="reset_button">RESET</button>
+        </div>
+        
         <div class="sub_header">
             <div><p>SEM</p></div>
             <div><p>gpa</p></div>
         </div>
-        <div class="container_1">
-        </div>
+        <div class="container_1"></div>
         <p id="cpga-displayer"></p>
         <div class="button_container">
             <button id="add_sem_gpa_button">ADD GPA</button>
@@ -67,10 +73,7 @@
         <div class="button_container predict_container">
             <button id="analyse_button">ANALYSE</button>
         </div>
-        
     </div>
-    
-    <script src="scripts/data.js"></script> 
     <script src="scripts/cpga-scripts/main.js"></script>
     <script src="scripts/cpga-scripts/remove_button.js"></script>
     <script src="scripts/cpga-scripts/modify_button.js"></script>

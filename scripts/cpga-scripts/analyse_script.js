@@ -18,15 +18,13 @@ function required_data_generator(){
         total_gpa+=analyse_gpa[i];
         analyse_cgpa.push(parseFloat(((total_gpa / ((i + 1) * 10))*10).toFixed(3)));
     }
-    analyse_min_cgpa=Math.min(...analyse_cgpa)-1;
-    analyse_max_cgpa=Math.max(...analyse_cgpa)+1;
+    analyse_min_cgpa = Math.min(...analyse_cgpa, ...analyse_gpa) - 1;
+    analyse_max_cgpa = Math.max(...analyse_cgpa, ...analyse_gpa) + 1;
+
     //TODO WHEN ALL ARE CHANGED TO 10
     /*if(analyse_max_cgpa>10){
         analyse_max_cgpa=10;
     }*/
-    console.log(analyse_cgpa);
-    console.log(analyse_min_cgpa);
-    console.log(analyse_max_cgpa);
 }
 
 function graph_generator(){
@@ -64,7 +62,7 @@ function graph_generator(){
 }
 document.getElementById("analyse_button").addEventListener('click',()=>{
     document.getElementById("marksChart").style.visibility='visible';
-    console.log(cpg_storages);
+    
     required_data_generator();
     graph_generator();
 })
