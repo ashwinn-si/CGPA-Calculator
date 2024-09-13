@@ -203,7 +203,7 @@ select,input{
 .predict_container{
     visibility: hidden;
 }
-#marksChart {
+#marksChart,#marksChart_1{
     width: 400px;
     border-radius: 20px;
     margin: 20px auto;
@@ -218,6 +218,7 @@ select,input{
     align-items: center;
     padding: 10px;
 }
-#chart_return_button{
+
+#chart_return_button,#chart_return_button_1{
     padding: 5px 10px;
 }

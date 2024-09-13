@@ -20,14 +20,13 @@ function required_data_generator(){
     }
     analyse_min_cgpa = Math.min(...analyse_cgpa, ...analyse_gpa) - 1;
     analyse_max_cgpa = Math.max(...analyse_cgpa, ...analyse_gpa) + 1;
-
     //TODO WHEN ALL ARE CHANGED TO 10
     /*if(analyse_max_cgpa>10){
         analyse_max_cgpa=10;
     }*/
 }
 
-function graph_generator(){
+function analyse_graph_generator(){
     const ctx = document.getElementById('myChart').getContext('2d');
         const myChart = new Chart(ctx, {
             type: 'line',  
@@ -62,9 +61,8 @@ function graph_generator(){
 }
 document.getElementById("analyse_button").addEventListener('click',()=>{
     document.getElementById("marksChart").style.visibility='visible';
-    
     required_data_generator();
-    graph_generator();
+    analyse_graph_generator();
 })
 document.getElementById("chart_return_button").addEventListener('click',()=>{
     document.getElementById("marksChart").style.visibility='hidden';

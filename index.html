@@ -10,7 +10,10 @@
     
     <!--CHART REQUIED JS-->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
+    <!--ML MODEL JS-->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="scripts/ml-model-scripts/data_sets.js"></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -53,6 +56,10 @@
         <canvas id="myChart"></canvas>
         <button id="chart_return_button">Return</button>
     </div>
+    <div id="marksChart_1">
+        <canvas id="myChart_1"></canvas>
+        <button id="chart_return_button_1">Return</button>
+    </div>
     <div class="container">
         <div class="head_container">
             <p class="header">CGPA CALCULATOR</p>
@@ -72,6 +79,7 @@
         </div>
         <div class="button_container predict_container">
             <button id="analyse_button">ANALYSE</button>
+            <button id="predict_button">PREDICT</button>
         </div>
     </div>
     <script src="scripts/cpga-scripts/main.js"></script>
@@ -79,5 +87,7 @@
     <script src="scripts/cpga-scripts/modify_button.js"></script>
     <!--GRAPH SCRIPT-->
     <script src="scripts/cpga-scripts/analyse_script.js"></script>
+    <!--ML MODEL SCRIPTS-->
+    <script src="scripts/ml-model-scripts/ml-model.js"></script>
 </body>
 </html>
