@@ -386,3 +386,12 @@ input, select {
     z-index: 999;
     visibility: hidden;
 }
+@media (max-width: 768px) {
+    .loader-container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        background-color: transparent;
+        backdrop-filter: none;
+    }
+}
