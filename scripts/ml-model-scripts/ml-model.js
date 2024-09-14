@@ -21,6 +21,9 @@ function model_cpg_generator(predict_gpa, input_gpa) {
     
     model_min_cgpa = Math.min(...model_cgpa, ...model_gpa) - 1;
     model_max_cgpa = Math.max(...model_cgpa, ...model_gpa) + 1;
+    if(model_max_cgpa>10){
+        model_max_cgpa=10;
+    }
 }
 
 

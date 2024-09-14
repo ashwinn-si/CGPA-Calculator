@@ -12,6 +12,9 @@ document.getElementById("reset_button").addEventListener('click',()=>{
     mark_storages=[];
     cpg_storages=[];
     curr_sem_counts=1;
+    document.getElementById("cpga-displayer").innerHTML = "";
+    document.getElementById("cpga-displayer").style.visibility = 'hidden';
+
     main_display_changer();
 })
 
@@ -25,11 +28,7 @@ function error_catcher(score){
     }
 }
 
-document.getElementById("add_sem_gpa_button").addEventListener('click',()=>{
-    document.querySelector(".pop_up_container").style.visibility='visible';
-});
-
-document.getElementById("submit_button").addEventListener('click',()=>{
+function grade_adder(){
     if(error_catcher(parseFloat(document.getElementById("cpg_scored").value))){
         cpg_storages.push({curr_sem_counts:curr_sem_counts,gpa:document.getElementById("cpg_scored").value});
         mark_storages.push({curr_sem_counts:null});
@@ -37,9 +36,20 @@ document.getElementById("submit_button").addEventListener('click',()=>{
         main_display_changer();
         document.querySelector(".pop_up_container").style.visibility='hidden';
     }
-    
+}
+document.getElementById("add_sem_gpa_button").addEventListener('click',()=>{
+    document.querySelector(".pop_up_container").style.visibility='visible';
+});
+document.getElementById("cpg_scored").addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault(); 
+        grade_adder();
+    }
 });
 
+document.getElementById("submit_button").addEventListener('click',()=>{
+    grade_adder();
+});
 document.getElementById("dont_know_button").addEventListener('click',()=>{
     document.querySelector(".pop_up_container").style.visibility='hidden';
     localStorage.setItem("curr_sem_count",JSON.stringify(curr_sem_counts));
