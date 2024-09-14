@@ -43,14 +43,16 @@ function main_container_display_changer(){
 document.getElementById('add_subject_button').addEventListener('click',()=>{
     //retreving the subject name
     subject_name=document.getElementById("subject_name").value;
-    //storing the marks value
-    curr_sem_mark_storage.push({subject_no:subject_count,subject_name:subject_name,credit_point:credit_point,grade_point:grade_point});
+    if(error_handling(subject_name)){
+        //storing the marks value
+        curr_sem_mark_storage.push({subject_no:subject_count,subject_name:subject_name,credit_point:credit_point,grade_point:grade_point});
 
-    //changes the display settings
-    main_container_display_changer();
+        //changes the display settings
+        main_container_display_changer();
 
-    document.querySelector(".add_grade_container").style.visibility='hidden';
-    subject_count++;
+        document.querySelector(".add_grade_container").style.visibility='hidden';
+        subject_count++;
+    }
 })
 
 //!changing the selection box content

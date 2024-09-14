@@ -2,7 +2,7 @@ let modify_edit_container=document.querySelector('.modify_container');
 let sem_no_modify=-1;
 
 function modify_generator(){
-    if(error_catcher(parseFloat(document.getElementById("modify_new_gpa").value))){
+    if(error_catcher(parseFloat(document.getElementById("modify_new_gpa").value),"modify_new_gpa")){
         cpg_storages.forEach(element=>{
             if(element.curr_sem_counts==sem_no_modify){
                 element.gpa=document.getElementById("modify_new_gpa").value;

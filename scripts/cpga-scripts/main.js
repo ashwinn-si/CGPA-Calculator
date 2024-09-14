@@ -19,17 +19,22 @@ document.getElementById("reset_button").addEventListener('click',()=>{
 })
 
 //input_checker
-function error_catcher(score){
+function error_catcher(score,element_id){
     if(score>=0 && score<=10){
         return true
     }else{
-        alert("Enter a valid gpa[0-10]");
+        navigator.vibrate(200);
+        const container = document.getElementById(`${element_id}`);
+            container.classList.add('vibrate');
+            setTimeout(() => {
+                container.classList.remove('vibrate');
+            }, 400);
         return false;
     }
 }
 
 function grade_adder(){
-    if(error_catcher(parseFloat(document.getElementById("cpg_scored").value))){
+    if(error_catcher(parseFloat(document.getElementById("cpg_scored").value),"cpg_scored")){
         cpg_storages.push({curr_sem_counts:curr_sem_counts,gpa:document.getElementById("cpg_scored").value});
         mark_storages.push({curr_sem_counts:null});
         curr_sem_counts++;

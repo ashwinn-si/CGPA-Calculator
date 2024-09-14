@@ -30,6 +30,18 @@ document.getElementById("add_grade_trigger").addEventListener("click",()=>{
     document.querySelector(".add_grade_container").style.visibility='visible';
 });
 
+function error_handling(sub_name){
+    if(sub_name.length!=0){
+        return true;
+    }else{
+        navigator.vibrate(200);
+        const container = document.getElementById('subject_name');
+            container.classList.add('vibrate');
+            setTimeout(() => {
+                container.classList.remove('vibrate');
+            }, 400);
+    }
+}
 
 //adding event listeners for the gpa_show_container buttons
 
