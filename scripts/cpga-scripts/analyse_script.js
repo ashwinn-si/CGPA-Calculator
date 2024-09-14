@@ -26,39 +26,48 @@ function required_data_generator(){
     }*/
 }
 
-function analyse_graph_generator(){
+function analyse_graph_generator() {
     const ctx = document.getElementById('myChart').getContext('2d');
-        const myChart = new Chart(ctx, {
-            type: 'line',  
-            data: {
-                labels: analyse_sems, 
-                datasets: [{
-                    label: 'GPA',
-                    data: analyse_gpa, 
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                },
-                {
-                    label: 'CGPA',
-                    data: analyse_cgpa, 
-                    backgroundColor: 'rgba(175, 192, 192, 0.2)',
-                    borderColor: 'rgba(175, 192, 192, 1)',
-                    borderWidth: 1
-                }]
+    const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: analyse_sems,
+            datasets: [{
+                label: 'GPA',
+                data: analyse_gpa,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
             },
-            options: {
-                scales: {
-                    y: {
-                        
-                        beginAtZero: false,
-                        min: analyse_min_cgpa, 
-                        max: analyse_max_cgpa   
+            {
+                label: 'CGPA',
+                data: analyse_cgpa,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                x: {
+                    ticks: {
+                        color: '#ffffff'  // Bright white color for the x-axis labels
                     }
+                },
+                y: {
+                    ticks: {
+                        color: '#ffffff'  // Bright white color for the y-axis labels
+                    },
+                    beginAtZero: false,
+                    min: analyse_min_cgpa,
+                    max: analyse_max_cgpa
                 }
             }
-        });
+        }
+    });
 }
+
+
 document.getElementById("analyse_button").addEventListener('click',()=>{
     document.getElementById("marksChart").style.visibility='visible';
     required_data_generator();

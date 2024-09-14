@@ -7,7 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap" rel="stylesheet">
     <!--CHART REQUIED JS-->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!--ML MODEL JS-->
@@ -17,8 +19,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
     <div class="pop_up_container">
-        <p>Enter your gpa</p>
+        <p style="font-size: 1.5rem; font-family: Oswald; font-weight: bold;">Enter your gpa</p>
         <input type="number" id="cpg_scored" min="0" max="10">
         <div>
             <button id="submit_button">Submit</button>
@@ -32,7 +37,7 @@
         <button id="return_button">RETURN</button>
     </div>
     <div class="modify_container">
-        <p>ENTER THE SEM NO. TO BE CHANGED AND GPA</p>
+        <p style="text-align: center;">ENTER THE SEM NO. TO BE CHANGED AND GPA</p>
         <div>
             <div><p class="modify_header">SEM NO. </p></div>
             <div><select id="modify_selection_container"></select></div>

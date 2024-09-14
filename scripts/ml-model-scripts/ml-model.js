@@ -4,6 +4,7 @@ let model_gpa=[];
 let model_min_cgpa=0;
 let model_max_cgpa=10;
 function model_cpg_generator(predict_gpa, input_gpa) {
+    document.querySelector(".loader-container").style.visibility = "hidden";
     let inputGPAArray = input_gpa.map(element => parseFloat(element).toFixed(3));
     let predictGPAArray = predict_gpa.map(element => parseFloat(element).toFixed(3));
     
@@ -27,8 +28,6 @@ function model_cpg_generator(predict_gpa, input_gpa) {
 let myChart;  // Declare a global variable to store the chart instance
 
 function graph_generator() {
-   
-    // Get the canvas context
     const ctx = document.getElementById('myChart_1').getContext('2d');
     
     // Destroy the previous chart instance if it exists
@@ -36,7 +35,7 @@ function graph_generator() {
         myChart.destroy();
     }
 
-    // Create a new chart instance
+    // Create a new chart instance with updated data
     myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -45,22 +44,30 @@ function graph_generator() {
                 {
                     label: 'GPA',
                     data: model_gpa,
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
+                   backgroundColor: 'rgba(255, 206, 86, 0.2)', 
+                    borderColor: 'rgba(255, 206, 86, 1)',
                     borderWidth: 1
                 },
                 {
                     label: 'CGPA',
                     data: model_cgpa,
-                    backgroundColor: 'rgba(175, 192, 192, 0.2)',
-                    borderColor: 'rgba(175, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)', 
+                    borderColor: 'rgba(75, 192, 192, 1)',
                     borderWidth: 1
                 }
             ]
         },
         options: {
             scales: {
+                x: {
+                    ticks: {
+                        color: '#ffffff'
+                    }
+                },
                 y: {
+                    ticks: {
+                        color: '#ffffff'
+                    },
                     beginAtZero: false,
                     min: model_min_cgpa,
                     max: model_max_cgpa
@@ -69,6 +76,7 @@ function graph_generator() {
         }
     });
 }
+
 
 function normalizeData(data) {
     return data.map(value => value / 10);
@@ -106,7 +114,7 @@ async function trainModel(model, inputTensor, outputTensor) {
 
   // Event listener for the "Predict" button
 document.getElementById("predict_button").addEventListener("click", async function() {
-    alert("PREDICTION CAN TAKE FEW SECS");
+    document.querySelector(".loader-container").style.visibility = "visible";
     let inputGPA = [];
     cpg_storages.forEach(element => {
         inputGPA.push(parseFloat(element.gpa));
