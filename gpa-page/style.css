@@ -8,19 +8,27 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: darkgray;
+    background-color: linear-gradient(135deg, #f0f0f0, #d3d3d3);;
     flex-direction: column;
 }
 .header{
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-family: "Oswald";
     font-weight: bold;
     padding: 10px;
+    text-shadow:
+        0 0 5px #39ff14,
+        0 0 10px #39ff14,
+        0 0 15px #fffc33,  
+        0 0 20px #fffc33,
+        0 0 30px #39ff14,
+        0 0 40px #39ff14,
+        0 0 50px #fffc33;
 }
 
 /*!add grade container styling*/
 .add_grade_container,.gpa_shower_container,.edit_subject_container{
-    background-color: rgba(255, 255, 255, 0.84);
+    background-color: rgba(255, 255, 255, 0.97);
     position: absolute;
     width: 450px;
     padding: 20px 0;
@@ -51,6 +59,13 @@ body{
 }
 #gpa_text{
     color: rgb(255, 0, 0);
+    text-shadow:0 0 5px black,
+    0 0 10px black,
+    0 0 15px white,  
+    0 0 20px white,
+    0 0 30px black,
+    0 0 40px black,
+    0 0 50px white; ;
 }
 .add_grade_container div{
     display: flex;
@@ -71,9 +86,18 @@ body{
 }
 #add_subject_button,#remove_subject_button{
     padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
     text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+#add_subject_button:hover, #remove_subject_button:hover{
+    background-color: white;
+    color: black;
 }
 
 /*!editing subject button styling*/
@@ -87,7 +111,7 @@ body{
 .edit_subject_container select{
     margin-top: 10px;
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 2rem;
     text-align: center;
     width: 50px;
 }
@@ -120,6 +144,12 @@ body{
     text-transform: uppercase;
     padding: 20px;
     border-radius: 20px;
+    box-shadow:
+    0 0 5px rgba(0, 0, 0, 0.6),   
+    0 0 10px rgba(0, 0, 0, 0.8),  
+    0 0 15px rgba(0, 0, 0, 1),    
+    0 0 20px rgba(0, 0, 0, 1),   
+    0 0 30px rgba(0, 0, 0, 1);
 }
 .container div{
     width: 33.33%;
@@ -136,9 +166,11 @@ body{
     color: white;
 }
 .context{
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: white;
     margin: 10px 0;
+    font-family: "New Amsterdam";
+    letter-spacing: 2px;
 }
 #add_grade_trigger,#calculate_gpa,#edit{
     padding: 10px 20px;
@@ -150,15 +182,34 @@ body{
     font-weight: bold;
     margin: 0px 10px;
     margin-top: 10px;
+    transition: all 0.3s ease;
+}
+#add_grade_trigger:hover,#return_home:hover{
+    background-color: rgb(255, 38, 0);
 }
 #calculate_gpa{
     background-color: lightblue;
+}
+#calculate_gpa:hover{
+    background-color: rgb(1, 191, 255);
 }
 #edit{
     background-color: lightgreen;
     padding: 10px 30px;
 }
-
+#edit:hover{
+    background-color: rgb(15, 255, 15);
+}
+#edit_button{
+    background-color: lightgreen;
+}
+#edit_button:hover{
+    background-color: rgb(15, 255, 15);
+}
+select,input{
+    font-family: "New Amsterdam";
+    font-size: 2rem;
+}
 @media(max-width:768px){
     .container{
         width: 450px;

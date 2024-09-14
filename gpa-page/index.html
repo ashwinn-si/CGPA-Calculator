@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GPA Calculator</title>
     <!-- Header font-->
+    <!-- Common font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    <!--common font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <p class="header">GPA CALCULATOR</p>
+
     <div class="add_grade_container">
         <div>
             <p>Subject Name</p>
             <input type="text" class="text_box" id="subject_name"> 
-            
         </div>
         <div>
             <p>Credit Points</p>
@@ -30,10 +30,10 @@
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
-                  </select>
+                </select>
             </div>
         </div>
-            <div>
+        <div>
             <p>Grade Points</p>
             <div id="grade_point">
                 <select>
@@ -49,41 +49,40 @@
         </div>
         <button id="add_subject_button">Add Subject</button>
     </div>
+
     <div class="edit_subject_container">
         <p>ENTER THE SUBJECT NO. TO BE DELETED</p>
         <div>
             <div id="subject_del_no">
-                <select id="selection_container">
-                    
-                </select>
+                <select id="selection_container"></select>
             </div>
         </div>
         <button id="remove_subject_button">REMOVE SUBJECT</button>
     </div>
-    
+
     <div class="gpa_shower_container">
-        <p>gpa : <span id="gpa_text">9.14</span> / 10</p>
+        <p style='font-family: "New Amsterdam";font-size: 2.5rem;'>GPA : <span id="gpa_text">9.14</span> / 10</p>
         <div>
-            <button id="edit_button">return</button>
-            <button id="return_home">home</button>
+            <button id="edit_button">Return</button>
+            <button id="return_home">Home</button>
         </div>
     </div>
-    
+
     <div class="container">
-            <div class="subject_no">
-                <p class="sub_header">subject<br>Name</p>
-            </div>
-            <div class="credit_point">
-                <p class="sub_header">credit<br>point</p>
-            </div>
-            <div class="grade_point">
-                <p class="sub_header">grade<br>point</p>
-            </div>
-            
-            <button id="add_grade_trigger">ADD GRADE</button>
-            <button id="calculate_gpa">Calculate GPA</button>
-            <button id="edit">EDIT</button>        
+        <div class="subject_no">
+            <p class="sub_header">Subject<br>Name</p>
+        </div>
+        <div class="credit_point">
+            <p class="sub_header">Credit<br>Point</p>
+        </div>
+        <div class="grade_point">
+            <p class="sub_header">Grade<br>Point</p>
+        </div>
+        <button id="add_grade_trigger">ADD GRADE</button>
+        <button id="calculate_gpa">Calculate GPA</button>
+        <button id="edit">EDIT</button>        
     </div>
+
     <script src="../scripts/gpa-scripts/main.js"></script>
     <script src="../scripts/gpa-scripts/display-changes.js"></script>
 </body>
