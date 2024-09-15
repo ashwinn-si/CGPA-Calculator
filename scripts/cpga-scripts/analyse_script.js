@@ -4,7 +4,7 @@ let analyse_gpa = [];
 let analyse_min_cgpa = 0;
 let analyse_max_cgpa = 10;
 
-let analyse_myChart; // Global variable to store the chart instance
+let analyse_myChart;
 
 function required_data_generator() {
     let count = 1;

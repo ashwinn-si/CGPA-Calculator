@@ -13,7 +13,7 @@ body{
     background-color: black;
     flex-direction: column;
 }
-.pop_up_container{
+.pop_up_container,.add_cpga_container{
     background-color: rgba(255, 255, 255, 0.95);
     position: absolute;
     width: 400px;
@@ -49,6 +49,10 @@ body{
     padding: 10px 15px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+}
+.add_cpga_container div p{
+    font-weight: bold;
+    text-align: center;
 }
 /* Button styles */
 button {
@@ -294,7 +298,7 @@ input, select {
     margin: 10px 0;
     font-family: "New Amsterdam";
 }
-
+/**/
 /*loader styling*/
 .loader {
     width: 5px;
@@ -409,6 +413,9 @@ input, select {
 .vibrate {
     animation: smoothVibrate 1s ease infinite; /* Smooth and gentle vibration */
 }
+#congrs-lottie-animation{
+    visibility: hidden;
+}
 @media (max-width: 768px) {
     .loader-container {
         width: 100vw;
@@ -420,7 +427,7 @@ input, select {
     .container{
         width: 350px;
     }
-    .pop_up_container{
+    .pop_up_container,.add_cpga_container{
         width: 350px;
     }
     #add_sem_gpa_button, #cal_cpga_button, #main_edit_button, #analyse_button, #predict_button ,#add_cgpa_button{

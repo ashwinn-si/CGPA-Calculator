@@ -1,5 +1,3 @@
-//adding event listeners to add the context mark to the main screen
-
 function grade_getter(value){
     let grade='0';
     switch(value){

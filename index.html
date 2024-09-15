@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGPA CALCULATOR</title>
+    <!-- FONTS REQUIRED -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
@@ -15,7 +16,9 @@
     <!--ML MODEL JS-->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
     <script src="scripts/ml-model-scripts/data_sets.js"></script>
+    <!-- LOTTIE ANIMATION -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.11/lottie.min.js"></script>
+    <!-- MAIN STYLESHEET -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -57,6 +60,19 @@
         </div>
         <button id="remove_sem_button">REMOVE SEM</button>
     </div>
+    <div class="add_cpga_container">
+        <p style="font-size: 1.5rem; font-family: Oswald; font-weight: bold;">Enter your CGPA</p>
+        <input type="number" id="cgpg_scored" min="0" max="10">
+        <div>
+            <p>FROM SEM</p>
+            <p id="from_sem_text" style="padding-bottom: 10px;"></p>
+        </div>
+        <div>
+            <p>TO SEM </p>
+            <input type="number" id="cgpa_to" min="0" max="8">
+        </div>
+        <button id="add_cpga_submit">SUBMIT</button>
+    </div>
     <div id="marksChart">
         <canvas id="myChart"></canvas>
         <button id="chart_return_button">Return</button>
@@ -90,12 +106,14 @@
         <div style="display: flex;justify-self: center;align-items: center;flex-direction: row;"><div id="lottie-animation" style="width: 50px; height:50px;"></div><div style="display: flex;justify-self: center;align-items: center;flex-direction: row;background: linear-gradient(to right, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
         -webkit-background-clip: text;
         color: transparent;"><a style="font-family: New Amsterdam;font-size: 1.5rem;letter-spacing: 1px;text-decoration: none;text-underline-position: none;" href="https://www.instagram.com/ash_bytess/?hl=en" target="_blank">ash_bytess</a></div></div>
-        
-
     </div>
+    <div id="congrs-lottie-animation" style="width: 100vh; height:100vh; position:absolute;top:5%;"></div>
+    <!--MAIN SCRIPTS-->
     <script src="scripts/cpga-scripts/main.js"></script>
     <script src="scripts/cpga-scripts/remove_button.js"></script>
     <script src="scripts/cpga-scripts/modify_button.js"></script>
+    <script src="scripts/cpga-scripts/add_cgpa_script.js"></script>
+    <!--LOTTIE SCRIPT-->
     <script src="scripts/lottie_ani.js"></script>
     <!--GRAPH SCRIPT-->
     <script src="scripts/cpga-scripts/analyse_script.js"></script>

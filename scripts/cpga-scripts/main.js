@@ -3,10 +3,13 @@ let cpg_storages=JSON.parse(localStorage.getItem("cpg_storage")) || []; //contai
 //contains the entire marks of each sem
 let alert_message=JSON.parse(localStorage.getItem("alert")) || true;
 let curr_sem_counts=JSON.parse(localStorage.getItem("curr_sem_count"))||1;
+//add gpa_button_values
+let cgpa_button_key=false;
+let total_cgpa_scored=0;
 
 //reset button text
 
-alert("Press the reset button before using the calculator. After completing your calculations, press reset again to clear all data and prepare the calculator for the next use.")
+//alert("Press the reset button before using the calculator. After completing your calculations, press reset again to clear all data and prepare the calculator for the next use.")
 
 document.getElementById("reset_button").addEventListener('click',()=>{
     mark_storages=[];
@@ -14,6 +17,7 @@ document.getElementById("reset_button").addEventListener('click',()=>{
     curr_sem_counts=1;
     document.getElementById("cpga-displayer").innerHTML = "";
     document.getElementById("cpga-displayer").style.visibility = 'hidden';
+    document.getElementById("cal_cpga_button").style.visibility = 'hidden';
     document.getElementById("main_edit_button").style.visibility = 'hidden';
     main_display_changer();
 })
@@ -21,6 +25,19 @@ document.getElementById("reset_button").addEventListener('click',()=>{
 //input_checker
 function error_catcher(score,element_id){
     if(score>=0 && score<=10){
+        return true
+    }else{
+        navigator.vibrate(200);
+        const container = document.getElementById(`${element_id}`);
+            container.classList.add('vibrate');
+            setTimeout(() => {
+                container.classList.remove('vibrate');
+            }, 400);
+        return false;
+    }
+}
+function error_catcher_sem(score,element_id){
+    if(score>=0 && score<=8){
         return true
     }else{
         navigator.vibrate(200);
@@ -75,8 +92,15 @@ function main_display_changer(){
                 </div>`
         })
         container.innerHTML=inner_text;
-        document.querySelector('.predict_container').style.visibility='visible';
-        document.getElementById("main_edit_button").style.visibility='visible';
+        if(!cgpa_button_key){
+            document.querySelector('.predict_container').style.visibility='visible';
+            document.getElementById("main_edit_button").style.visibility='visible';
+        }else{
+            document.querySelector('.predict_container').style.visibility='hidden';
+            document.getElementById("main_edit_button").style.visibility='hidden';
+            document.getElementById("cal_cpga_button").style.visibility='visible';
+        }   
+        
     }else{
         container.innerHTML="";
         document.querySelector('.predict_container').style.visibility='hidden';
@@ -86,11 +110,30 @@ function main_display_changer(){
 
 
 document.getElementById("cal_cpga_button").addEventListener('click',()=>{
-    let total_gpa=0;
-    cpg_storages.forEach((Element)=>{
+    if(cgpa_button_key){
+        let total_gpa=total_cgpa_scored;
+        let cal_sem=1;
+        cpg_storages.forEach((Element)=>{
+            if(Element.gpa !="NOT GIVEN"){
+            total_gpa+=parseFloat(Element.gpa);
+            cal_sem++;
+            }
+            
+        });
+        console.log(total_gpa);
+        console.log(cal_sem);
+        document.getElementById("cpga-displayer").innerHTML = (total_gpa/cal_sem).toFixed(3);
+    }else{
+        let total_gpa=0;
+        cpg_storages.forEach((Element)=>{
         total_gpa+=parseFloat(Element.gpa);
-    })
-    document.getElementById("cpga-displayer").innerHTML = ((total_gpa / ((curr_sem_counts - 1) * 10))*10).toFixed(3);
+        })
+        document.getElementById("cpga-displayer").innerHTML = ((total_gpa / ((curr_sem_counts - 1) * 10))*10).toFixed(3);
+    }
+    document.getElementById("congrs-lottie-animation").style.visibility='visible';
+    setInterval(()=>{
+        document.getElementById("congrs-lottie-animation").style.visibility='hidden';
+    },3000);
     document.getElementById("cpga-displayer").style.visibility='visible';
 })
 
@@ -101,4 +144,5 @@ document.getElementById("main_edit_button").addEventListener('click',()=>{
 document.getElementById("return_button").addEventListener('click',()=>{
     document.querySelector(".edit_options_container").style.visibility='hidden';
 })
+
 main_display_changer(); //!rendering the page one time 

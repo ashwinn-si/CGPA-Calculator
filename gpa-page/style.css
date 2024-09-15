@@ -234,6 +234,7 @@ select,input{
 #congrs-lottie-animation{
     visibility: hidden;
 }
+
 @media(max-width:768px){
     .container{
         width: 350px;

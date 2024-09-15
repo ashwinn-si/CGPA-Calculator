@@ -5,7 +5,6 @@ let subject_name="";
 let curr_sem_mark_storage=[];
 let gpa;
 
-
 let curr_sem_counts=JSON.parse(localStorage.getItem("curr_sem_count"));
 let mark_storages=JSON.parse(localStorage.getItem("mark_storage")) || []; // containes all the semesters marks 
 let cpg_storages=JSON.parse(localStorage.getItem("cpg_storage")) || []; //containes all the cgp of the semesters

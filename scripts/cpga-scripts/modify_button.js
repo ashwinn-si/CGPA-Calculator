@@ -12,6 +12,7 @@ function modify_generator(){
         modify_edit_container.style.visibility='hidden';
     }
 }
+
 document.getElementById("modify_sem_button").addEventListener('click',()=>{
     modify_edit_container.style.visibility='visible';
     document.querySelector(".edit_options_container").style.visibility='hidden';    

@@ -3,6 +3,7 @@ let model_cgpa=[];
 let model_gpa=[];
 let model_min_cgpa=0;
 let model_max_cgpa=10;
+
 function model_cpg_generator(predict_gpa, input_gpa) {
     document.querySelector(".loader-container").style.visibility = "hidden";
     let inputGPAArray = input_gpa.map(element => parseFloat(element).toFixed(3));

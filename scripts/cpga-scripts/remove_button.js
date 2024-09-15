@@ -19,6 +19,7 @@ document.getElementById("delete_selection_container").addEventListener("change",
     sem_no_deleted = document.getElementById("delete_selection_container").value;
 });
 
+
 document.getElementById("remove_sem_button").addEventListener('click',()=>{
     mark_storages.splice(sem_no_deleted-1,1);
     cpg_storages.splice(sem_no_deleted-1,1);
