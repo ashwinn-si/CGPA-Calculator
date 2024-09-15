@@ -9,7 +9,7 @@ let total_cgpa_scored=0;
 
 //reset button text
 
-//alert("Press the reset button before using the calculator. After completing your calculations, press reset again to clear all data and prepare the calculator for the next use.")
+alert("Press the reset button before using the calculator. After completing your calculations, press reset again to clear all data and prepare the calculator for the next use.")
 
 document.getElementById("reset_button").addEventListener('click',()=>{
     mark_storages=[];
