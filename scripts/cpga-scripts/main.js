@@ -61,6 +61,7 @@ function grade_adder(){
 }
 document.getElementById("add_sem_gpa_button").addEventListener('click',()=>{
     document.querySelector(".pop_up_container").style.visibility='visible';
+    document.getElementById("cal_cpga_button").style.visibility = 'visible';
 });
 document.getElementById("cpg_scored").addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
