@@ -15,6 +15,7 @@ document.getElementById("reset_button").addEventListener('click',()=>{
     mark_storages=[];
     cpg_storages=[];
     curr_sem_counts=1;
+    cgpa_button_key=false;
     document.getElementById("cpga-displayer").innerHTML = "";
     document.getElementById("cpga-displayer").style.visibility = 'hidden';
     document.getElementById("cal_cpga_button").style.visibility = 'hidden';
