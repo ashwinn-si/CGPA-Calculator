@@ -14,7 +14,7 @@ document.getElementById("reset_button").addEventListener('click',()=>{
     curr_sem_counts=1;
     document.getElementById("cpga-displayer").innerHTML = "";
     document.getElementById("cpga-displayer").style.visibility = 'hidden';
-
+    document.getElementById("main_edit_button").style.visibility = 'hidden';
     main_display_changer();
 })
 
@@ -76,6 +76,7 @@ function main_display_changer(){
         })
         container.innerHTML=inner_text;
         document.querySelector('.predict_container').style.visibility='visible';
+        document.getElementById("main_edit_button").style.visibility='visible';
     }else{
         container.innerHTML="";
         document.querySelector('.predict_container').style.visibility='hidden';

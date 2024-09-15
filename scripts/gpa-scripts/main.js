@@ -47,6 +47,7 @@ function error_handling(sub_name){
 
 document.getElementById("edit_button").addEventListener('click',()=>{
     document.querySelector(".gpa_shower_container").style.visibility='hidden';
+    document.getElementById("congrs-lottie-animation").style.visibility='hidden';
 })
 document.getElementById("return_home").addEventListener('click',()=>{
     mark_storages.push({curr_sem_counts:curr_sem_mark_storage});
@@ -68,6 +69,7 @@ document.getElementById("calculate_gpa").addEventListener("click",()=>{
     })
     gpa=((total_grade_point/total_credit_point)*10).toFixed(2);
     document.getElementById("gpa_text").innerHTML=gpa;    document.querySelector(".gpa_shower_container").style.visibility='visible';
+    document.getElementById("congrs-lottie-animation").style.visibility='visible';
     
 })
 

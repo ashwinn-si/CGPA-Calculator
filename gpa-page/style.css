@@ -10,6 +10,7 @@ body{
     height: 100vh;
     background-color: linear-gradient(135deg, #f0f0f0, #d3d3d3);;
     flex-direction: column;
+    overflow-y: hidden;
 }
 .header{
     font-size: 1.7rem;
@@ -229,9 +230,13 @@ select,input{
 .vibrate {
     animation: smoothVibrate 1s ease infinite; /* Smooth and gentle vibration */
 }
+/*lottie animation*/
+#congrs-lottie-animation{
+    visibility: hidden;
+}
 @media(max-width:768px){
     .container{
-        width: 450px;
+        width: 350px;
     }
     #edit{
         padding: 10px 30px;
@@ -240,5 +245,17 @@ select,input{
         width: 445px;
         border-radius: 50px;
     }
-
+    .add_grade_container{
+        width: 350px;
+        flex-direction: column;
+    }
+    .add_grade_container div p{
+        font-size: 1.2rem;
+    }
+    .gpa_shower_container{
+        width: 350px;
+    }
+    .add_grade_container div{
+        margin: 0;
+    }
 }

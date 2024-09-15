@@ -227,6 +227,7 @@ select,input{
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
+    
 }
 
 #cpga-displayer {
@@ -259,7 +260,7 @@ select,input{
     align-items: center;
     padding: 10px;
 }
-#add_sem_gpa_button, #cal_cpga_button, #main_edit_button, #analyse_button, #predict_button {
+#add_sem_gpa_button, #cal_cpga_button, #main_edit_button, #analyse_button, #predict_button ,#add_cgpa_button{
     margin-top: 5px;
     padding: 10px 20px;
     font-size: 1.2rem;
@@ -267,6 +268,9 @@ select,input{
     color: white;
     border-radius: 5px;
     transition: all 0.3s ease-out;
+}
+#main_edit_button{
+    visibility: hidden;
 }
 #add_sem_gpa_button:hover, #cal_cpga_button:hover, #main_edit_button:hover, #analyse_button:hover, #predict_button:hover{
     background-color: #2cec33;
@@ -412,5 +416,37 @@ input, select {
         position: fixed;
         background-color: transparent;
         backdrop-filter: none;
+    }
+    .container{
+        width: 350px;
+    }
+    .pop_up_container{
+        width: 350px;
+    }
+    #add_sem_gpa_button, #cal_cpga_button, #main_edit_button, #analyse_button, #predict_button ,#add_cgpa_button{
+        margin-top: 5px;
+        padding: 5px 10px;
+        font-size: 1.2rem;
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 5px;
+        transition: all 0.3s ease-out;
+    }
+    .head_container{
+        position: relative;
+    }
+    .header{
+        position: absolute;
+        left: 10%;
+        font-size: 1.5rem;
+    }
+    .edit_options_container,.modify_container,.edit_sem_container{
+        width: 325px;
+    }
+    .edit_sem_container p{
+        font-size: 1.2rem;
+    }
+    #marksChart, #marksChart_1{
+        width: 350px;
     }
 }
