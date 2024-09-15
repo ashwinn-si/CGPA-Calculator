@@ -11,6 +11,7 @@ body{
     background-color: linear-gradient(135deg, #f0f0f0, #d3d3d3);;
     flex-direction: column;
     overflow-y: hidden;
+    overflow-x: hidden;
 }
 .header{
     font-size: 1.7rem;
