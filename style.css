@@ -157,7 +157,36 @@ select,input{
     padding: 20px;
     width: 450px;
     background-color: #ffffff;
-    box-shadow: 0 4px 12px rgb(213, 250, 8);
+
+    position: relative;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(90deg, #ff00ff, #00ffff, #00ff00, #ff0000);
+    background-size: 400%;
+    z-index: -1;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.7),
+                0 0 25px rgba(0, 255, 255, 0.7),
+                0 0 35px rgba(0, 255, 0, 0.7),
+                0 0 45px rgba(255, 0, 0, 0.7);
+    animation: neonMoveFaster 5s linear infinite;
+}
+
+@keyframes neonMoveFaster {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 .head_container{
