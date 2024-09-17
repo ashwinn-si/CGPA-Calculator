@@ -8,7 +8,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: linear-gradient(135deg, #f0f0f0, #d3d3d3);;
+    background-color: black;
     flex-direction: column;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -18,14 +18,12 @@ body{
     font-family: "Oswald";
     font-weight: bold;
     padding: 10px;
-    text-shadow:
-        0 0 5px #39ff14,
-        0 0 10px #39ff14,
-        0 0 15px #fffc33,  
-        0 0 20px #fffc33,
-        0 0 30px #39ff14,
-        0 0 40px #39ff14,
-        0 0 50px #fffc33;
+    text-shadow: 0 0 5px #fff,  /* Bright inner glow */
+    0 0 10px #00FFFF, /* Cyan glow */
+    0 0 20px #00FFFF, /* Cyan glow */
+    0 0 30px #1E90FF, /* Outer blue glow */
+    0 0 40px #1E90FF, /* Outer blue glow */
+    0 0 50px #1E90FF; /* Outer blue glow */
 }
 
 /*!add grade container styling*/
@@ -46,15 +44,15 @@ body{
 }
 .gpa_shower_container{
     font-size: 2rem;
-    flex-direction: column;   
+    flex-direction: column; 
+    border: solid;
+    border-color: #000;  
 }
 .gpa_shower_container div button{
     padding: 10px 20px;
-    background-color: tomato;
     border-radius: 20px;
     font-size: 1rem;
     font-family: "Oswald";
-    border: none;
     font-weight: bold;
     margin: 0px 10px;
     text-transform: uppercase;
@@ -88,19 +86,13 @@ body{
 }
 #add_subject_button,#remove_subject_button{
     padding: 10px 20px;
-    background-color: black;
-    color: white;
-    border: none;
+    color: black;
     border-radius: 5px;
     font-size: 1.2rem;
     cursor: pointer;
     text-transform: uppercase;
-    transition: background-color 0.3s ease;
 }
-#add_subject_button:hover, #remove_subject_button:hover{
-    background-color: white;
-    color: black;
-}
+
 
 /*!editing subject button styling*/
 .edit_subject_container{
@@ -141,17 +133,14 @@ body{
     align-items: center;
     flex-wrap: wrap;
     flex-direction: row;
-    background:url("../assets/background.gif");
+    background:white;
     backdrop-filter: blur(10px);
     text-transform: uppercase;
     padding: 20px;
     border-radius: 20px;
-    box-shadow:
-    0 0 5px rgba(0, 0, 0, 0.6),   
-    0 0 10px rgba(0, 0, 0, 0.8),  
-    0 0 15px rgba(0, 0, 0, 1),    
-    0 0 20px rgba(0, 0, 0, 1),   
-    0 0 30px rgba(0, 0, 0, 1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 
+                0 0 30px rgba(255, 255, 255, 0.5), 
+                0 0 45px rgba(255, 255, 255, 0.3);
 }
 .container div{
     width: 33.33%;
@@ -165,49 +154,49 @@ body{
 }
 .sub_header{
     font-size: 1.5rem;
-    color: white;
+    color: #333;
 }
 .context{
     font-size: 1.7rem;
-    color: white;
+    color: black;
     margin: 10px 0;
     font-family: "New Amsterdam";
     letter-spacing: 2px;
 }
 #add_grade_trigger,#calculate_gpa,#edit{
     padding: 10px 20px;
-    background-color: tomato;
     border-radius: 20px;
-    font-size: 1rem;
-    font-family: "Oswald";
-    border: none;
-    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: "New Amsterdam", sans-serif;;
     margin: 0px 10px;
     margin-top: 10px;
-    transition: all 0.3s ease;
+    border: solid;
+    border-width: 1px;
 }
-#add_grade_trigger:hover,#return_home:hover{
-    background-color: rgb(255, 38, 0);
+button {
+      background-color: white; 
+      color: black;
+      padding: 10px 20px;
+      border: solid;
+      border-width: 1px;
+      border-color: #000;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1); 
+      transition: box-shadow 0.5s ease, transform 0.5s ease; /
+      
 }
-#calculate_gpa{
-    background-color: lightblue;
+button:hover {
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow on hover */
+    transform: translateY(-2px); /* Moves button up slightly */
 }
-#calculate_gpa:hover{
-    background-color: rgb(1, 191, 255);
+button:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow on button press */
+    transform: translateY(0); /* Resets the button position */
 }
-#edit{
-    background-color: lightgreen;
-    padding: 10px 30px;
-}
-#edit:hover{
-    background-color: rgb(15, 255, 15);
-}
-#edit_button{
-    background-color: lightgreen;
-}
-#edit_button:hover{
-    background-color: rgb(15, 255, 15);
-}
+
 select,input{
     font-family: "New Amsterdam";
     font-size: 2rem;

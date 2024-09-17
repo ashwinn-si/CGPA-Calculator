@@ -7,9 +7,10 @@ let curr_sem_counts=JSON.parse(localStorage.getItem("curr_sem_count"))||1;
 let cgpa_button_key=false;
 let total_cgpa_scored=0;
 
+
 //reset button text
 
-alert("Press the reset button before using the calculator. After completing your calculations, press reset again to clear all data and prepare the calculator for the next use.")
+//alert("Press -> RESET BUTTON -> Before Calculation\nAfter Calculation -> Press -> RESET BUTTON");
 
 document.getElementById("reset_button").addEventListener('click',()=>{
     mark_storages=[];
@@ -37,6 +38,7 @@ function error_catcher(score,element_id){
         return false;
     }
 }
+
 function error_catcher_sem(score,element_id){
     if(score>=0 && score<=8){
         return true
@@ -49,6 +51,19 @@ function error_catcher_sem(score,element_id){
             }, 400);
         return false;
     }
+}
+
+function error_handler(from_sem,to_sem){
+    if(from_sem>=to_sem){
+        navigator.vibrate(200);
+        let container = document.getElementById('cgpa_to');
+        container.classList.add('vibrate');
+        setTimeout(() => {
+            container.classList.remove('vibrate');
+        }, 400);
+        return false;
+    }
+    return true;
 }
 
 function grade_adder(){

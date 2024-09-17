@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap" rel="stylesheet">
     <!-- LOTTIE ANIMATION -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.11/lottie.min.js"></script>
     <!-- MAIN STYLESHEET -->
@@ -66,7 +69,7 @@
         <p style='font-family: "New Amsterdam";font-size: 2.5rem;'>GPA : <span id="gpa_text">9.14</span> / 10</p>
         <div>
             <button id="edit_button">Return</button>
-            <button id="return_home">Home</button>
+            <button id="return_home" style="background-color: tomato;">CGPA PAGE</button>
         </div>
     </div>
 
@@ -83,7 +86,23 @@
         <button id="add_grade_trigger">ADD GRADE</button>
         <button id="calculate_gpa">Calculate GPA</button>
         <button id="edit">EDIT</button> 
-        <div style="display: flex;justify-self: center;align-items: center;flex-direction: row;width: 100%;"><div id="lottie-animation" style="width: 50px; height:50px;"></div><div style="display: flex;justify-self: center;align-items: center;flex-direction: row;color: white;"><a style="font-family: New Amsterdam;font-size: 1.5rem;letter-spacing: 1px;text-decoration: none;text-underline-position: none;color: white;" href="https://www.instagram.com/ash_bytess/?hl=en" target="_blank">ash_bytess</a></div></div>       
+        <div style="display: flex; justify-content: center; align-items: center; flex-direction: row; width: 100%;">
+            <div id="lottie-animation" style="width: 50px; height: 50px;"></div>
+            <div style="display: flex; justify-content: center; align-items: center; flex-direction: row; color: white;">
+              <a href="https://www.instagram.com/ash_bytess/?hl=en" target="_blank" 
+                 style="font-family: 'New Amsterdam'; 
+                        font-size: 1.5rem; 
+                        letter-spacing: 1px; 
+                        text-decoration: none; 
+                        text-underline-position: none; 
+                        background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4); 
+                        -webkit-background-clip: text; 
+                        color: transparent;">
+                ash_bytess
+              </a>
+            </div>
+          </div>
+                
     </div>
     <div id="congrs-lottie-animation" style="width: 100vh; height:100vh; position:absolute;top:5%;"></div>
     <!--MAIN SCRIPTS-->

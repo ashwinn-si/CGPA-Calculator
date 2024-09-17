@@ -45,31 +45,14 @@ body{
 
 }
 .pop_up_container div button {
-    background-color: tomato;
     margin: 10px 5px;
     font-size: 1rem;
     padding: 10px 15px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
 .add_cpga_container div p{
     font-weight: bold;
     text-align: center;
-}
-/* Button styles */
-button {
-    padding: 10px 20px;
-    background-color: rgb(93, 212, 252);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: rgb(22, 197, 255);
 }
 
 /*!edit options container*/
@@ -110,7 +93,7 @@ button:hover {
 .modify_container p{
     font-size: 1.3rem;
     font-weight: bold;
-    color: #333;
+    color: #555;
 }
 select,input{
     width: 130px;
@@ -157,28 +140,16 @@ select,input{
     padding: 20px;
     width: 450px;
     background-color: #ffffff;
-
     position: relative;
+
+    /* White neon-like box shadow */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 
+                0 0 30px rgba(255, 255, 255, 0.5), 
+                0 0 45px rgba(255, 255, 255, 0.3);
 }
 
-.container::before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    background: linear-gradient(90deg, #ff00ff, #00ffff, #00ff00, #ff0000);
-    background-size: 400%;
-    z-index: -1;
-    border-radius: 20px;
-    padding: 5px;
-    box-shadow: 0 0 15px rgba(255, 0, 255, 0.7),
-                0 0 25px rgba(0, 255, 255, 0.7),
-                0 0 35px rgba(0, 255, 0, 0.7),
-                0 0 45px rgba(255, 0, 0, 0.7);
-    animation: neonMoveFaster 5s linear infinite;
-}
+
+
 
 @keyframes neonMoveFaster {
     0% {
@@ -198,7 +169,7 @@ select,input{
 }
 #reset_button {
     padding: 8px 16px;
-    background-color: #ff6347;
+    background-color: #ff2600;
     color: white;
     border-radius: 5px;
     position: absolute;
@@ -295,21 +266,11 @@ select,input{
     align-items: center;
     padding: 10px;
 }
-#add_sem_gpa_button, #cal_cpga_button, #main_edit_button, #analyse_button, #predict_button ,#add_cgpa_button{
-    margin-top: 5px;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 5px;
-    transition: all 0.3s ease-out;
-}
+
 #main_edit_button{
     visibility: hidden;
 }
-#add_sem_gpa_button:hover, #cal_cpga_button:hover, #main_edit_button:hover, #analyse_button:hover, #predict_button:hover{
-    background-color: #2cec33;
-}
+
 
 #chart_return_button, #chart_return_button_1 {
     padding: 8px 12px;
@@ -320,7 +281,15 @@ select,input{
     margin-top: 15px;
 }
 
-
+.add_cpga_button_container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#add_cpga_return_button{
+    background-color: tomato;
+}
 input, select {
     padding: 5px;
     font-size: 1.5rem;
@@ -328,6 +297,9 @@ input, select {
     border: 2px solid #ccc;
     margin: 10px 0;
     font-family: "New Amsterdam";
+}
+#cgpa_to{
+    padding: 5px;
 }
 /**/
 /*loader styling*/
@@ -409,6 +381,30 @@ input, select {
         114px 38px 0 0px #34495e; }
 }
 
+/* Button styles */
+button {
+    background-color: white; 
+      color: black;
+      padding: 10px 20px;
+      border: solid;
+      border-width: 1px;
+      border-color: #000;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1); 
+      transition: box-shadow 0.5s ease, transform 0.5s ease; /
+}
+button:hover {
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow on hover */
+    transform: translateY(-2px); /* Moves button up slightly */
+}
+button:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow on button press */
+    transform: translateY(0); /* Resets the button position */
+}
+
 
 /* Center the loader and blur the background */
 .loader-container {
@@ -447,6 +443,8 @@ input, select {
 #congrs-lottie-animation{
     visibility: hidden;
 }
+
+
 @media (max-width: 768px) {
     .loader-container {
         width: 100vw;
@@ -465,8 +463,6 @@ input, select {
         margin-top: 5px;
         padding: 5px 10px;
         font-size: 1.2rem;
-        background-color: #4CAF50;
-        color: white;
         border-radius: 5px;
         transition: all 0.3s ease-out;
     }

@@ -30,14 +30,14 @@
         <input type="number" id="cpg_scored" min="0" max="10">
         <div>
             <button id="submit_button">Submit</button>
-            <button id="dont_know_button">DON'T KNOW</button>
+            <button id="dont_know_button">CAL GPA</button>
         </div>
     </div>
     <div class="edit_options_container">
         <p>AVAILABLE OPTIONS</p>
         <button id="modify_sem_button">MODIFY GPA SEM</button>
         <button id="edit_button">REMOVE GPA SEM</button>
-        <button id="return_button">RETURN</button>
+        <button id="return_button" style="background-color: tomato;">RETURN</button>
     </div>
     <div class="modify_container">
         <p style="text-align: center;">ENTER THE SEM NO. TO BE CHANGED AND GPA</p>
@@ -61,8 +61,6 @@
         <button id="remove_sem_button">REMOVE SEM</button>
     </div>
     <div class="add_cpga_container">
-        <p style="font-size: 1.5rem; font-family: Oswald; font-weight: bold;">Enter your CGPA</p>
-        <input type="number" id="cgpg_scored" min="0" max="10">
         <div>
             <p>FROM SEM</p>
             <p id="from_sem_text" style="padding-bottom: 10px;"></p>
@@ -71,7 +69,13 @@
             <p>TO SEM </p>
             <input type="number" id="cgpa_to" min="0" max="8">
         </div>
-        <button id="add_cpga_submit">SUBMIT</button>
+        <p style="font-size: 1.5rem; font-family: Oswald; font-weight: bold;">Enter your CGPA</p>
+        <input type="number" id="cgpg_scored" min="0" max="10">
+        <div class="add_cpga_button_container">
+            <button id="add_cpga_submit">SUBMIT</button>
+            <button id="add_cpga_return_button">RETURN</button>
+        </div>
+        
     </div>
     <div id="marksChart">
         <canvas id="myChart"></canvas>
@@ -94,14 +98,14 @@
         <div class="container_1"></div>
         <p id="cpga-displayer"></p>
         <div class="button_container">
-            <button id="add_sem_gpa_button">ADD GPA</button>
-            <button id="add_cgpa_button">ADD GCPA</button>
-            <button id="main_edit_button">EDIT</button>
+            <button id="add_sem_gpa_button" class="button_target">ADD GPA</button>
+            <button id="add_cgpa_button" class="button_target">ADD GCPA</button>
+            <button id="main_edit_button" class="button_target">EDIT</button>
         </div>
         <div class="button_container predict_container">
-            <button id="cal_cpga_button">CAL - GPA</button>
-            <button id="analyse_button">ANALYSE</button>
-            <button id="predict_button">PREDICT</button>
+            <button id="cal_cpga_button" class="button_target">CAL - GPA</button>
+            <button id="analyse_button" class="button_target">ANALYSE</button>
+            <button id="predict_button" class="button_target">PREDICT</button>
         </div>
         <div style="display: flex;justify-self: center;align-items: center;flex-direction: row;"><div id="lottie-animation" style="width: 50px; height:50px;"></div><div style="display: flex;justify-self: center;align-items: center;flex-direction: row;background: linear-gradient(to right, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
         -webkit-background-clip: text;
