@@ -7,11 +7,10 @@
 }
 body{
     height: 100vh;
-    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: rgb(232,226,226);
     flex-direction: column;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -153,11 +152,6 @@ select,input{
     width: 450px;
     background-color: #ffffff;
     position: relative;
-
-    /* White neon-like box shadow */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 
-                0 0 30px rgba(255, 255, 255, 0.5), 
-                0 0 45px rgba(255, 255, 255, 0.3);
 }
 
 

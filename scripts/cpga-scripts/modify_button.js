@@ -10,11 +10,13 @@ function modify_generator(){
         })
         main_display_changer();
         modify_edit_container.style.visibility='hidden';
+        document.getElementById("modify_new_gpa").value="";
     }
 }
 
 document.getElementById("modify_sem_button").addEventListener('click',()=>{
     modify_edit_container.style.visibility='visible';
+    document.getElementById("modify_new_gpa").focus();
     document.querySelector(".edit_options_container").style.visibility='hidden';    
     let container = document.getElementById("modify_selection_container");
     sem_no_modify=1;

@@ -1,6 +1,7 @@
 document.getElementById('add_cgpa_button').addEventListener('click',()=>{
     document.getElementById('from_sem_text').innerHTML=curr_sem_counts;
     document.querySelector('.add_cpga_container').style.visibility='visible';
+    document.getElementById("cgpa_to").focus();
 })
 
 document.getElementById("add_cpga_submit").addEventListener('click',()=>{
@@ -22,5 +23,7 @@ document.getElementById("add_cpga_submit").addEventListener('click',()=>{
     
 })
 document.getElementById("add_cpga_return_button").addEventListener("click",()=>{
-    document.querySelector('.add_cpga_container').style.visibility='hidden';  
+    document.querySelector('.add_cpga_container').style.visibility='hidden'; 
+    document.getElementById('cgpg_scored').value="";
+    document.getElementById('cgpa_to').value="";
 })

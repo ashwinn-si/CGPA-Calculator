@@ -73,12 +73,15 @@ function grade_adder(){
         mark_storages.push({curr_sem_counts:null});
         curr_sem_counts++;
         main_display_changer();
+        document.getElementById("cpg_scored").value='';
         document.querySelector(".pop_up_container").style.visibility='hidden';
     }
 }
 document.getElementById("add_sem_gpa_button").addEventListener('click',()=>{
     document.querySelector(".pop_up_container").style.visibility='visible';
     document.getElementById("cal_cpga_button").style.visibility = 'visible';
+    document.getElementById("pop_up_sem_text").innerHTML=curr_sem_counts;
+    document.getElementById("cpg_scored").focus();
 });
 document.getElementById("cpg_scored").addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {

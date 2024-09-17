@@ -21,8 +21,8 @@ function required_data_generator() {
         total_gpa += analyse_gpa[i];
         analyse_cgpa.push(parseFloat(((total_gpa / ((i + 1) * 10)) * 10).toFixed(3)));
     }
-    analyse_min_cgpa = Math.min(...analyse_cgpa, ...analyse_gpa) - 1;
-    analyse_max_cgpa = Math.max(...analyse_cgpa, ...analyse_gpa) + 1;
+    analyse_min_cgpa = Math.min(...analyse_cgpa, ...analyse_gpa) - 0.5;
+    analyse_max_cgpa = Math.max(...analyse_cgpa, ...analyse_gpa) + 0.5;
     if(analyse_max_cgpa>10){
         analyse_max_cgpa=10;
     }

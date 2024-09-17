@@ -51,6 +51,7 @@ document.getElementById('add_subject_button').addEventListener('click',()=>{
         document.querySelector(".add_grade_container").style.visibility='hidden';
         subject_count++;
     }
+    document.getElementById("subject_name").value="";
 })
 
 //!changing the selection box content

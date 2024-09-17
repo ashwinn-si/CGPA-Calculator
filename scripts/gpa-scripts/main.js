@@ -27,6 +27,7 @@ let credit_point_button=document.getElementById("credit_point").querySelector('s
 //add-grade extension trigger js code
 document.getElementById("add_grade_trigger").addEventListener("click",()=>{
     document.querySelector(".add_grade_container").style.visibility='visible';
+    document.getElementById("subject_name").focus();
 });
 
 function error_handling(sub_name){
