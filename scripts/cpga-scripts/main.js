@@ -9,8 +9,9 @@ let total_cgpa_scored=0;
 
 
 //reset button text
-
-//alert("Press -> RESET BUTTON -> Before Calculation\nAfter Calculation -> Press -> RESET BUTTON");
+document.getElementById("initial_pop_up_return_button").addEventListener('click',()=>{
+    document.querySelector('.initial_alert_container').style.visibility = "hidden";
+});
 
 document.getElementById("reset_button").addEventListener('click',()=>{
     mark_storages=[];

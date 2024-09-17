@@ -15,7 +15,7 @@ body{
     overflow-y: hidden;
     overflow-x: hidden;
 }
-.pop_up_container,.add_cpga_container{
+.pop_up_container,.add_cpga_container,.initial_alert_container{
     background-color: rgba(255, 255, 255, 0.95);
     position: absolute;
     width: 400px;
@@ -33,6 +33,17 @@ body{
     border-radius: 20px;
     border: solid;
     border-color: black;
+}
+.initial_alert_container{
+    visibility: visible;
+}
+.initial_alert_container icon{
+    font-size: 2rem;
+    color: blueviolet;
+}
+.initial_alert_container span{
+    color: red;
+    font-weight: bold;
 }
 .pop_up_container input{
     margin: 10px;
@@ -456,7 +467,7 @@ button:active {
     .container{
         width: 350px;
     }
-    .pop_up_container,.add_cpga_container{
+    .pop_up_container,.add_cpga_container,.initial_alert_container{
         width: 350px;
     }
     #add_sem_gpa_button, #cal_cpga_button, #main_edit_button, #analyse_button, #predict_button ,#add_cgpa_button{
