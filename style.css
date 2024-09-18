@@ -10,6 +10,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     background-color: rgb(232,226,226);
     flex-direction: column;
     overflow-y: hidden;
@@ -150,6 +151,7 @@ select,input{
     border-radius: 20px;
     padding: 20px;
     width: 450px;
+    min-height: 300px;
     background-color: #ffffff;
     position: relative;
 }
@@ -168,18 +170,18 @@ select,input{
 
 .head_container{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content:center;
     align-items: center;
     width: 100%;
-    position: relative;
+    position: absolute;
+    top:6%;
 }
 #reset_button {
     padding: 8px 16px;
     background-color: #ff2600;
     color: white;
     border-radius: 5px;
-    position: absolute;
-    right: 10px;
     transition: all 0.3s ease;
 }
 #reset_button:hover{
@@ -231,7 +233,7 @@ select,input{
     color: #333;
     font-weight: bold;
     font-family: Oswald;
-
+    text-align: center;
 }
 
 .button_container {
@@ -259,7 +261,7 @@ select,input{
     visibility: hidden;
 }
 #marksChart, #marksChart_1 {
-    width: 400px;
+    width: 100%;
     border-radius: 20px;
     margin: 20px auto;
     background-color: #131313;
@@ -452,6 +454,15 @@ button:active {
 
 
 @media (max-width: 768px) {
+    .head_container{
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        width: 100%;
+        position: absolute;
+        top:6%;
+    }
     .loader-container {
         width: 100vw;
         height: 100vh;
@@ -471,14 +482,7 @@ button:active {
         font-size: 1.2rem;
         border-radius: 5px;
         transition: all 0.3s ease-out;
-    }
-    .head_container{
-        position: relative;
-    }
-    .header{
-        position: absolute;
-        left: 10%;
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
     .edit_options_container,.modify_container,.edit_sem_container{
         width: 325px;

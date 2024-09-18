@@ -13,17 +13,21 @@ body{
     overflow-y: hidden;
     overflow-x: hidden;
 }
+.header_container{
+    position: absolute;
+top: 3%;
+backdrop-filter: blur(40px);
+-webkit-backdrop-filter: blur(40px); 
+border-radius: 10px;
+padding: 5px;
+
+}
 .header{
     font-size: 1.7rem;
     font-family: "Oswald";
     font-weight: bold;
     padding: 10px;
-    text-shadow: 0 0 5px #fff,  /* Bright inner glow */
-    0 0 10px #00FFFF, /* Cyan glow */
-    0 0 20px #00FFFF, /* Cyan glow */
-    0 0 30px #1E90FF, /* Outer blue glow */
-    0 0 40px #1E90FF, /* Outer blue glow */
-    0 0 50px #1E90FF; /* Outer blue glow */
+    
 }
 
 /*!add grade container styling*/
